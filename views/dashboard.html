@@ -1,0 +1,157 @@
+<script>
+    $(document).ready(function() {
+    	$(document).ready(function() {
+            $.material.init();
+        });
+    });
+</script>
+
+
+<div class="container">
+	<div class="row">
+		<div class="col-md-12">
+			<div class="dashboard">
+				<div class="panel panel-default">
+			    <div class="panel-body">
+			    	
+			    	<div class="menu-dash">
+			    		<ul>
+							<li ><a href="/#dashboard" ng-click="dash.view_chart()" >{{dash.chart}}</a></li>
+							<li ><a href="/#dashboard">Add month</a></li>
+						</ul>
+			    	</div>
+
+			    	<canvas ng-class="dash.view" id="chart-month" width="400"></canvas>
+
+			    	<div class="row info-dash">
+			    		<div class="col-md-4 col-sm-12">
+			    			<p>Pending</p>
+			    			<span>0</span>
+			    		</div>
+
+			    		<div class="col-md-4 col-sm-12">
+			    			<p>Approved</p>
+			    			<span>0</span>
+			    		</div>
+
+			    		<div class="col-md-4 col-sm-12">
+			    			<p>Denied</p>
+			    			<span>0</span>
+			    		</div>
+			    	</div>
+
+			    	<h1>Bank statements</h1>
+			    	<div class="table-responsive">
+			    	<table class="table">
+			    		<thead>
+			    			<th>Month</th>
+			    			<th>
+			    				<select ng-model="dash.month1" name="month" id="month" ng-options="month as month.month for month in dash.months">
+			    					<option value="">--Select month--</option>
+			    				</select>
+			    			</th>
+
+			    			<th>
+			    				<select ng-model="dash.month2" name="month" id="month" ng-options="month as month.month for month in dash.months">
+			    					<option value="">--Select month--</option>
+			    				</select>
+			    			</th>
+
+			    			<th>
+			    				<select ng-model="dash.month3" name="month" id="month" ng-options="month as month.month for month in dash.months">
+			    					<option value="">--Select month--</option>
+			    				</select>
+			    			</th>
+			    		</thead>
+
+			    		<tbody>
+			    			<tr>
+			    				<td>Beginning balance</td>
+				    			<td><input ng-model="dash.beginning_balance1" ng-init="dash.beginning_balance1=0" type="text"></td>
+				    			<td><input ng-model="dash.beginning_balance2" ng-init="dash.beginning_balance2=0" type="text"></td>
+				    			<td><input ng-model="dash.beginning_balance3" ng-init="dash.beginning_balance3=0" type="text"></td>
+			    			</tr>
+
+			    			<tr>
+			    				<td>Deposits</td>
+				    			<td><input ng-model="dash.deposits1" ng-init="dash.deposits1=0" type="text"></td>
+				    			<td><input ng-model="dash.deposits2" ng-init="dash.deposits2=0" type="text"></td>
+				    			<td><input ng-model="dash.deposits3" ng-init="dash.deposits3=0" type="text"></td>
+			    			</tr>
+
+			    			<tr>
+			    				<td>Withdrawals</td>
+				    			<td><input ng-model="dash.Withdrawals1" ng-init="dash.Withdrawals1=0" type="text"></td>
+				    			<td><input ng-model="dash.Withdrawals2" ng-init="dash.Withdrawals2=0" type="text"></td>
+				    			<td><input ng-model="dash.Withdrawals3" ng-init="dash.Withdrawals3=0" type="text"></td>
+			    			</tr>
+
+			    			<tr>
+			    				<td><strong>Ending balance</strong></td>
+				    			<td><strong>$ {{ (dash.beginning_balance1 | num) +  (dash.deposits1 | num) - (dash.Withdrawals1 | num) }}</strong></td>
+				    			<td><strong>$ {{ (dash.beginning_balance2 | num) +  (dash.deposits2 | num) - (dash.Withdrawals2 | num) }}</strong></td>
+				    			<td><strong>$ {{ (dash.beginning_balance3 | num) +  (dash.deposits3 | num) - (dash.Withdrawals3 | num) }}</strong></td>
+			    			</tr>
+			    		</tbody>
+			    	</table><br>
+
+			    	<table class="table">
+			    		<tr>
+			    			<td>Number of NSFs</td>
+			    			<td><input type="text"></td>
+			    			<td><input type="text"></td>
+			    			<td><input type="text"></td>
+			    		</tr>
+
+			    		<tr>
+			    			<td>Number of negative br days</td>
+			    			<td><input type="text"></td>
+			    			<td><input type="text"></td>
+			    			<td><input type="text"></td>
+			    		</tr>
+
+			    		<tr>
+			    			<td>Number of deposits</td>
+			    			<td><input type="text"></td>
+			    			<td><input type="text"></td>
+			    			<td><input type="text"></td>
+			    		</tr>
+
+			    		<tr>
+			    			<td>Number of Withdrawals</td>
+			    			<td><input type="text"></td>
+			    			<td><input type="text"></td>
+			    			<td><input type="text"></td>
+			    		</tr>
+			    	</table>
+			    </div>
+			    </div>
+			    <button class="btn btn-warning">Send data</button>
+			</div>
+			</div>
+		</div>
+	</div>
+</div>
+
+<script>
+    var randomScalingFactor = function(){ return Math.round(Math.random()*100)};
+    var lineChartData = {
+        labels : ["January","February","March"],
+        datasets : [
+            {
+                label: "Chart month",
+                fillColor : "rgba(151,187,205,0.2)",
+                strokeColor : "rgba(151,187,205,1)",
+                pointColor : "rgba(151,187,205,1)",
+                pointStrokeColor : "#fff",
+                pointHighlightFill : "#fff",
+                pointHighlightStroke : "rgba(151,187,205,1)",
+                data : [randomScalingFactor(),randomScalingFactor(),randomScalingFactor(),randomScalingFactor(),randomScalingFactor(),randomScalingFactor(),randomScalingFactor()]
+            }
+        ]
+    }
+
+    $(document).ready(function() {
+        
+    });
+</script>

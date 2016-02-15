@@ -1,0 +1,121 @@
+ body{
+ 	font-size: 16px;
+ 	font-family: 'Open Sans', sans-serif;
+ 	padding:0;
+ 	margin:0;
+ }
+ .home{
+ 	padding:0;
+ 	margin:0;
+ }
+
+ .bar-menu{
+ 	background-color:#FFF !important;
+ 	color: #e27b00 !important;
+ 	padding:0;
+	margin:0;
+ }
+
+.bar-menu img{ 
+	padding:0;
+	margin:0;
+ 	width:140px;
+ }
+
+ .menu-dash{
+ 	text-align: right;
+ 	padding:8px;
+ 	margin:0;
+ 	background-color:#e27b00;
+ }
+ .menu-dash ul{
+	margin:0;
+ }
+ .menu-dash ul li{
+ 	list-style:none;
+ 	display:inline-block;
+ 	margin-right:12px;
+ }
+.menu-dash ul li a{
+	color:#FFF;
+	padding:5px;
+}
+.menu-dash ul li a:hover{
+	background-color:rgba(0, 0, 0, 0.3);
+	text-decoration:none;
+}
+
+.dashboard .panel{
+	width:88%;
+	margin: 0 auto;
+	padding: 10px;
+}
+
+.dashboard table thead th,td{
+	border:none !important;
+}
+
+.info-dash{
+	margin-top:20px;
+	text-align:center;
+	font-weight:bold;
+	font-size:1.3em;
+}
+
+.chart_none{
+	display:none;
+}
+
+.view_chart{
+	display:block;
+}
+
+.avatar img{
+	width: 40px;
+	border-radius: 50%;
+	padding: 0;
+	margin: 0;
+	margin-right: 10px;
+}
+
+
+/*Login*/
+.login, .dashboard{	
+	margin-top: 60px;
+	margin-bottom: 60px;
+}
+
+.login .panel{
+	width: 440px;
+	margin: 0 auto;
+	padding: 20px;
+}
+/*fin Login*/
+
+ /*footer*/
+.footer{
+	margin: 0;
+	padding: 0;
+	height: 160px;
+	text-align: center;
+}
+
+.footer a{
+	color:#ea9821 !important;
+}
+
+.footer a:hover{
+	color: #e27b00 !important;
+}
+
+.footer p{
+	margin-top: 40px;
+}
+
+.footer .social a{
+	font-size: 1.8em;
+	padding: 5px;
+}
+
+ /*fin footer*/
+

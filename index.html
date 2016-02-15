@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="lendingfront">
+  <head>
+    <meta charset="utf-8">
+    <title>LendingFront</title>
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <meta name="viewport" content="width=device-width">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-material-design/0.3.0/css/material.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-material-design/0.3.0/css/ripples.min.css">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300' rel='stylesheet' type='text/css'>
+
+    <link rel="stylesheet" href="css/main.css">
+
+    <script src="./lib/Chart.min.js"></script>
+
+  </head>
+  <body id="body">
+
+    <!-- HTML INCLUDES -->
+    <div ng-include="'views/template/header.html'"></div>
+    <div class="home" ui-view></div>
+    <div ng-include="'views/template/footer.html'"></div>
+
+
+    <!-- Script  -->
+    <script src="http://code.jquery.com/jquery-2.1.3.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-material-design/0.3.0/js/material.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-material-design/0.3.0/js/ripples.min.js"></script>
+    
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.8/angular.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.8/angular-animate.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.8/angular-resource.js"></script>
+
+    <script src="./lib/angular-ui-router.min.js"></script>
+    <script src="./lib/ngStorage.min.js"></script>
+
+
+    <script src="scripts/app.js"></script>
+
+    <script src="scripts/controllers/auth.js"></script>
+    <script src="scripts/controllers/dashboard.js"></script>
+
+    <script src="scripts/services/auth.js"></script>
+    <script src="scripts/services/dashboard.js"></script>
+
+
+    <script>
+        $.material.init();
+        $(document).ready(function() {
+            $.material.init();
+        });
+    </script>
+
+
+</body>
+</html>

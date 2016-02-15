@@ -1,0 +1,40 @@
+<script>
+    $(document).ready(function() {
+    	$(document).ready(function() {
+            $.material.init();
+        });
+    });
+</script>
+
+<div class="container">
+	<div class="row">
+		<div class="col-md-12 col-sm-12 col-xs-12">
+			<div class="login" id="login">
+				<div class="panel panel-default">
+			    <div class="panel-body">
+					<form ng-submit="login.login()">
+
+						<div class="form-group">
+							<label class="control-label" for="email">Email</label>
+							<input ng-model="login.email" class="form-control" type="email" name="email" id="email">
+						</div>
+						<div class="form-group">
+							<label class="control-label" for="password">Password</label>
+							<input ng-model="login.password" class="form-control" type="password" name="password" id="password">
+						</div>
+						<div class="form-group checkbox">
+		                    <label>
+		                        <input type="checkbox"> Remember
+		                        <p><a href="">Did you forget your password?</a></p>
+		                    </label>
+		                </div>
+						<div class="form-group">
+							<button type="submit" class="btn btn-warning btn-lg btn-block">Log in</button>
+						</div>
+					</form>
+			    </div>
+			</div>
+			</div>
+		</div>
+	</div>
+</div>
